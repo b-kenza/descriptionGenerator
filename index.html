@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter Product Details</title>
+</head>
+<style>
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .form-column {
+        float: left;
+        width: 30%; 
+        padding: 0 2%; 
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px; 
+    }
+
+</style>
+<script>
+    function displayDetails() {
+        var details = [
+            "Item Name: " + document.getElementById("itemName").value,
+            "Brand: " + document.getElementById("brand").value,
+            "Colour: " + document.getElementById("colour").value,
+            "Type: " + document.getElementById("type").value,
+            "Department: " + document.getElementById("department").value,
+            "Style: " + document.getElementById("style").value,
+            "Accents: " + document.getElementById("accents").value,
+            "Pattern: " + document.getElementById("pattern").value,
+            "Closure: " + document.getElementById("closure").value,
+            "Condition: " + document.getElementById("condition").value,
+            "Upper Material: " + document.getElementById("upperMaterial").value,
+            "Toe Shape: " + document.getElementById("toeShape").value,
+            "Outsole Material: " + document.getElementById("outsoleMaterial").value,
+            "UK Shoe Size: " + document.getElementById("ukShoeSize").value,
+            "EU Shoe Size: " + document.getElementById("euShoeSize").value
+        ];
+
+        var halfLength = Math.ceil(details.length / 2);
+        var firstHalf = details.slice(0, halfLength);
+        var secondHalf = details.slice(halfLength);
+
+        var firstColumnHtml = "<ul>";
+        for (var i = 0; i < firstHalf.length; i++) {
+            firstColumnHtml += "<li>" + firstHalf[i] + "</li>";
+        }
+        firstColumnHtml += "</ul>";
+
+        var secondColumnHtml = "<ul>";
+        for (var i = 0; i < secondHalf.length; i++) {
+            secondColumnHtml += "<li>" + secondHalf[i] + "</li>";
+        }
+        secondColumnHtml += "</ul>";
+
+        document.getElementById("firstColumn").innerHTML = firstColumnHtml;
+        document.getElementById("secondColumn").innerHTML = secondColumnHtml;
+    }
+</script>
+<body>
+<div class="row">
+        <div class="form-column">
+            <form>
+                <label for="itemName"><h4>Item Name:</h4></label>
+                <input type="text" id="itemName" name="itemName"><br>
+
+                <label for="brand"><h4>Brand:</h4></label>
+                <input type="text" id="brand" name="brand"><br>
+
+                <label for="colour"><h4>Colour:</h4></label>
+                <input type="text" id="colour" name="colour"><br>
+
+                <label for="type"><h4>Type:</h4></label>
+                <input type="text" id="type" name="type"><br>
+
+                <label for="department"><h4>Department:</h4></label>
+                <input type="text" id="department" name="department"><br>
+
+                <label for="style"><h4>Style:</h4></label>
+                <input type="text" id="style" name="style"><br>
+
+                <label for="accents"><h4>Accents:</h4></label>
+                <input type="text" id="accents" name="accents"><br>
+
+                <label for="pattern"><h4>Pattern:</h4></label>
+                <input type="text" id="pattern" name="pattern"><br>
+            </form>
+        </div>
+        <div class="form-column">
+            <form>
+
+                <label for="closure"><h4>Closure:</h4></label>
+                <input type="text" id="closure" name="closure"><br>
+
+                <label for="condition"><h4>Condition:</h4></label>
+                <input type="text" id="condition" name="condition"><br>
+
+                <label for="upperMaterial"><h4>Upper Material:</h4></label>
+                <input type="text" id="upperMaterial" name="upperMaterial"><br>
+
+                <label for="toeShape"><h4>Toe Shape:</h4></label>
+                <input type="text" id="toeShape" name="toeShape"><br>
+
+                <label for="outsoleMaterial"><h4>Outsole Material:</h4></label>
+                <input type="text" id="outsoleMaterial" name="outsoleMaterial"><br>
+
+                <label for="ukShoeSize"><h4>UK Shoe Size:</h4></label>
+                <input type="text" id="ukShoeSize" name="ukShoeSize"><br>
+
+                <label for="euShoeSize"><h4>EU Shoe Size:</h4></label>
+                <input type="text" id="euShoeSize" name="euShoeSize"><br>
+                <br>
+                <br>
+            </form>
+            <button type="button" onclick="displayDetails()">Display Details</button>
+    <div class="row">
+        <div class="column" id="firstColumn"></div>
+        <div class="column" id="secondColumn"></div>
+    </div>
+        </div>
+    </div>
+</body>
+</html>
